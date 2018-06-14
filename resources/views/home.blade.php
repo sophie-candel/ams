@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.layouts-app.master') 
 @section('content') {{--
 <div>
     @if (Route::has('login'))

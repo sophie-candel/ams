@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.layouts-app.master') 
 @section('content') @if (session('status'))
 <div class="notification is-success" role="alert">
     {{ session('status') }}

@@ -6,23 +6,11 @@ use Illuminate\Http\Request;
 
 class IntraController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function index() {
+        return redirect()->route('intranet.dashboard');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('intra');
+    
+    public function dashboard() {
+        return view('intranet.dashboard');
     }
 }
