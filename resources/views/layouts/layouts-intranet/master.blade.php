@@ -7,5 +7,6 @@
   <div id="app">
     @yield('content')
   </div>
+  @yield('scripts')
 </body>
 @endsection
