@@ -2,7 +2,7 @@
 @section('body')
 
 <body class="has-navbar-fixed-top">
-    @include('layouts.layouts-app.nav');
+    @include('layouts.layouts-app.nav')
     <div id="app">
         @yield('content')
     </div>

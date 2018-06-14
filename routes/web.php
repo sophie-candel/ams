@@ -20,6 +20,7 @@ Auth::routes();
 Route::prefix('intranet')->middleware('role:superadministrator|administrator|user')->group(function(){
     Route::get('/', 'IntraController@index')->name('intranet');
     Route::get('dashboard', 'IntraController@dashboard')->name('intranet.dashboard');
+    Route::resource('/users', 'UserCOntroller');
 });
 
 // Route::get('/home', 'HomeController@index')->name('home');

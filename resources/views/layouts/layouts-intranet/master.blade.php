@@ -1,7 +1,7 @@
 @extends('layouts.master') 
 @section('body')
 
-<body class="has-navbar-fixed-top">
+<body>
   @include('layouts.layouts-intranet.nav')
 
   <div id="app">
