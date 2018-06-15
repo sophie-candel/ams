@@ -14,5 +14,7 @@
             <a href="{{ route('intranet.dashboard') }}">Intranet</a> @endif
         </div>
     </footer>
+    @yield('scripts')
+    <script src="{{ asset('/js/app.js') }}"></script>
 </body>
 @endsection

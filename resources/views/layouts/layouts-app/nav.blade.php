@@ -2,7 +2,7 @@
   <div class="container">
     <div class="navbar-brand">
       <a href="{{route('home')}}" class="navbar-item">
-          Accueil
+          <strong>Arts Martiaux Schweighouse</strong>
           </a>
     </div>
     <div class="navbar-menu">
@@ -12,11 +12,11 @@
           <a class="navbar-link">
                       Club
                   </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="{{route('club.presentation')}}">
                           Présentation
                       </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="{{route('club.equipe')}}">
                           Equipe
                       </a>
           </div>
@@ -25,11 +25,11 @@
           <a class="navbar-link">
                       Horaires & Tarifs
                   </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="{{route('horaires-tarifs.horaires')}}">
                           Horaires
                       </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="{{route('horaires-tarifs.tarifs')}}">
                           Tarifs
                       </a>
           </div>
@@ -38,16 +38,16 @@
           <a class="navbar-link">
                       Compétitions
                   </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="{{route('competitions.calendrier')}}">
                           Calendriers
                       </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="{{route('competitions.resultats')}}">
                           Résultats
                       </a>
           </div>
         </div>
-        <a href="" class="navbar-item">
+        <a class="navbar-item" href="{{route('galerie')}}">
                   Galerie
               </a>
         <a href="" class="navbar-item">

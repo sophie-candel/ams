@@ -6,7 +6,15 @@
         <h1 class="title">Détails</h1>
     </div>
     <div class="column has-text-right">
-        <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right">Modifier</a>
+
+        <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right">
+                    <span class="icon is-small">
+                      <i class="fas fa-pencil"></i>
+                    </span>
+                    <span>Modifier</span>
+                  </a> {{-- <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right"><span class="icon m-r-5">
+            <i class="fas fa-pencil-alt"></i>
+          </span>Modifier</a> --}}
     </div>
 </div>
 <hr> {{--

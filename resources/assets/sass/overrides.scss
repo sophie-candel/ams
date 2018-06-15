@@ -24,3 +24,8 @@ main {
 hr {
     background-color: $grey-lighter;
 }
+.columns {
+    flex-wrap: wrap;
+}
+
+// $pagination-color = $primary;

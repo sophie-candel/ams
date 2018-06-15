@@ -41,8 +41,8 @@
                 </b-radio-group>
 
             </div>
-            <a href="{{route('users.index')}}" class="button is-danger">Annuler</a>
-            <button class="button is-success">Enregistrer</button>
+            <a href="{{route('users.index')}}" class="button is-danger"><i class="fas fa-ban m-r-5"></i>Annuler</a>
+            <button class="button is-success"><i class="fas fa-check m-r-5"></i>Enregistrer</button>
         </form>
     </div>
 </div>

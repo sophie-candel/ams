@@ -9,13 +9,13 @@
 
     <div class="navbar-end">
       <a class="navbar-item has-text-white" href="{{ route('home') }}">
-        <span class="icon">
+        <span class="icon m-r-2">
           <i class="fas fa-home"></i>
         </span>
         Retour au site
       </a>
       <a class="navbar-item has-text-white" href="{{ route('logout') }}">
-        <span class="icon">
+        <span class="icon m-r-2">
           <i class="fas fa-sign-out-alt"></i>
         </span>
         Déconnexion
