@@ -7,3 +7,20 @@
 footer {
     padding: 3rem 1.5rem;
 }
+
+aside {
+    position: fixed;
+    width: 20%;
+    padding: 50px;
+    background-color: white;
+    height: 100vh;
+}
+
+main {
+    margin-left: 20%;
+    padding: 50px;
+}
+
+hr {
+    background-color: $grey-lighter;
+}

@@ -1,12 +1,13 @@
 @extends('layouts.master') 
 @section('body')
 
-<body>
+<body class="has-navbar-fixed-top">
   @include('layouts.layouts-intranet.nav')
+  @include('layouts.layouts-intranet.menu')
 
-  <div id="app">
+  <main>
     @yield('content')
-  </div>
+  </main>
   @yield('scripts')
 </body>
 @endsection

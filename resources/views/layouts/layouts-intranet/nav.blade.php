@@ -1,30 +1,26 @@
-<aside class="menu">
-  <p class="menu-label">
-    Accueil
-  </p>
-  <p class="menu-label">
-    Gestion du site
-  </p>
-  <ul class="menu-list">
-    <li><a>Actualités</a></li>
-    <li><a>Calendrier</a></li>
-    <li><a>Résultats</a></li>
-    <li><a>Galerie</a></li>
-  </ul>
-  <p class="menu-label">
-    Gestion des utilisateurs
-  </p>
-  <ul class="menu-list">
-    <li><a href="{{ route('users.index') }}">Utilisateurs</a></li>
-    <li><a>Roles & permissions</a></li>
-  </ul>
-  <p class="menu-label">
-    Gestion du club
-  </p>
-  <ul class="menu-list">
-    <li><a>Judokas</a></li>
-    <li><a>Fiches de frais</a></li>
-  </ul>
-  <p><a href="{{ route('home') }}">Retour au site</a></p>
-  <p><a href="{{ route('logout') }}">Déconnexion</a></p>
-</aside>
+<nav class="navbar is-fixed-top has-background-primary p-l-50 p-r-50">
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item has-text-white">
+        <strong>AMS - Intranet</strong>
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="{{ route('home') }}">
+        <span class="icon">
+          <i class="fas fa-home"></i>
+        </span>
+        Retour au site
+      </a>
+      <a class="navbar-item has-text-white" href="{{ route('logout') }}">
+        <span class="icon">
+          <i class="fas fa-sign-out-alt"></i>
+        </span>
+        Déconnexion
+      </a>
+
+    </div>
+  </div>
+</nav>

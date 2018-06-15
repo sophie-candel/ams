@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('id')->paginate(2);
+        $users = User::orderBy('id')->paginate(20);
         return view('intranet.users.index')->withUsers($users);
     }
 
