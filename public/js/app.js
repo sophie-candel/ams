@@ -986,10 +986,10 @@ window.Vue = __webpack_require__(35);
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
-xvm = new Vue({
-    el: '#app',
-    data: {}
-});
+// var app = new Vue({
+//     el: "#app",
+//     data: {}
+// });
 
 /***/ }),
 /* 11 */

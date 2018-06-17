@@ -16,7 +16,7 @@ aside {
     height: 100vh;
 }
 
-main {
+.main {
     margin-left: 20%;
     padding: 50px;
 }
@@ -26,6 +26,12 @@ hr {
 }
 .columns {
     flex-wrap: wrap;
+}
+pre {
+    padding: 0.75rem;
+}
+hr {
+    height: 1px;
 }
 
 // $pagination-color = $primary;

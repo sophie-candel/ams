@@ -6,43 +6,33 @@
         <h1 class="title">Détails</h1>
     </div>
     <div class="column has-text-right">
-
         <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right">
-                    <span class="icon is-small">
-                      <i class="fas fa-pencil"></i>
-                    </span>
-                    <span>Modifier</span>
-                  </a> {{-- <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right"><span class="icon m-r-5">
-            <i class="fas fa-pencil-alt"></i>
-          </span>Modifier</a> --}}
+            <span class="icon is-small">
+                <i class="fas fa-pencil-alt"></i>
+            </span>
+            <span>Modifier</span>
+        </a>
     </div>
 </div>
-<hr> {{--
-<div class="flex-container">
-    <div class="columns m-t-10">
-        <div class="column">
-            <h1 class="title">View user details</h1>
+
+<hr> 
+
+<div class="card">
+    <div class="card-content">
+        <div class="field">
+            <label for="name" class="label">Nom</label>
+            <pre>{{$user->name}}</pre>
         </div>
-        <div class="column">
-            <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right">Edit</a>
+        <div class="field">
+            <label for="name" class="label">Email</label>
+            <pre>{{$user->email}}</pre>
         </div>
+        <div class="field">
+            <label for="name" class="label">Password</label>
+            <pre>{{$user->password}}</pre>
+        </div>
+
     </div>
-    <hr class="m-t-10"> --}}
+</div>
 
-    <div class="card">
-        <div class="card-content">
-            <div class="field">
-                <label for="name" class="label">Nom</label>
-                <pre>{{$user->name}}</pre>
-            </div>
-            <div class="field">
-                <label for="name" class="label">Email</label>
-                <pre>{{$user->email}}</pre>
-            </div>
-
-        </div>
-    </div>
-
-
-    {{-- </div> --}}
 @endsection

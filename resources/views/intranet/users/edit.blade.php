@@ -25,24 +25,45 @@
             </div>
             <div class="field">
                 <label for="password" class="label">Mot de passe</label>
-                <b-radio-group v-model="password_options">
+                
                     <div class="field">
-                        <b-radio value="keep">Ne pas changer</b-radio>
+                        <b-radio v-model="password_options" native-value="keep">Ne pas changer</b-radio>
                     </div>
                     <div class="field">
-                        <b-radio value="auto">Générer automatiquement</b-radio>
+                        <b-radio v-model="password_options" native-value="auto">Générer automatiquement</b-radio>
                     </div>
                     <div class="field">
-                        <b-radio value="manual">Générer manuellement</b-radio>
+                        <b-radio v-model="password_options" native-value="manual">Générer manuellement</b-radio>
                         <p class="control">
                             <input type="text" class="input" name="password" id="password" v-if="password_options == 'manual'">
                         </p>
                     </div>
-                </b-radio-group>
 
             </div>
-            <a href="{{route('users.index')}}" class="button is-danger"><i class="fas fa-ban m-r-5"></i>Annuler</a>
-            <button class="button is-success"><i class="fas fa-check m-r-5"></i>Enregistrer</button>
+
+            <div class="field is-grouped">
+                <p class="control">
+                  <a href="{{route('users.index')}}" class="button is-danger  is-fullwidth">
+                    
+                    <span class="icon is-small">
+                      <i class="fas fa-ban"></i>
+                    </span>
+                    <span>Annuler</span>
+                  </a>
+                </p>
+                <p class="control">
+                    <button class="button is-success is-fullwidth">
+                        
+                        <span class="icon is-small">
+                          <i class="fas fa-check"></i>
+                        </span>
+                        <span>Enregistrer</span>
+                    </button>
+                </p>
+            </div>
+            
+            {{-- <a href="{{route('users.index')}}" class="button is-danger"><i class="fas fa-ban m-r-5"></i>Annuler</a>
+            <button class="button is-success"><i class="fas fa-check m-r-5"></i>Enregistrer</button> --}}
         </form>
     </div>
 </div>
@@ -53,10 +74,9 @@
 <script>
     var app = new Vue({
         el: '#app',
-        data {
+        data: {
             password_options: 'keep'
         }
     });
-
 </script>
 @endsection

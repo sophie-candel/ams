@@ -3,7 +3,7 @@
   <div class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item has-text-white">
-        <strong>AMS - Intranet</strong>
+        <strong>Arts Martiaux Schweighouse</strong>&nbsp;- Intranet
       </a>
     </div>
 

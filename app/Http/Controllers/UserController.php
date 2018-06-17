@@ -7,6 +7,7 @@ use App\User;
 use DB;
 use Session;
 use Hash;
+// use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -41,27 +42,20 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required'
+            'email' => 'required|email|unique:users'
         ]);
 
-        // if(Request::has('passord')&& !empty('password')) {
-        //     $password = trim($request->password);
-        // } else {
-        //     $length = 10;
-        //     $keyspace = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
-        //     $str = '';
-        //     $max = mb_strlen($keyspace, '8bit') - 1;
-        //     for ($i = 0; $i < $length; ++$i) {
-        //         $str .= $keyspace[random_init(0, $max)];
-        //     }
-        //     $password = $str;
-        // }
+        if ($request->filled('password')) {
+            $password = trim($request->password);
+        } else {
+            $password = Hash::make(str_random(8));
+        }
+
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        // $user->password = Hash::make($password);
+        $user->password = Hash::make($password);
         $user->save();
 
         return redirect()->route('users.show', ['id'=>$user->id]);
@@ -110,28 +104,23 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'filled|max:255',
             'email' => 'filled'
-            // 'email' => 'required|email|unique:users, email,'.$id
-            
         ]);
         
+      
+
+        
+        if($request->password_options == 'auto') {
+            $password = Hash::make(str_random(8));
+        } 
+        
+        elseif($request->password_options == 'manual') {
+            $user->password = Hash::make($request->password);
+        }
+
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        // $user->password = $request->password;
-
-        
-        // if($request->password_options == 'auto') {
-        //     $length = 10;
-        //     $keyspace = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
-        //     $str = '';
-        //     $max = mb_strlen($keyspace, '8bit') - 1;
-        //     for ($i = 0; $i < $length; ++$i) {
-        //         $str .= $keyspace[random_init(0, $max)];
-        //     }
-        //     $user->password = Hask::make($str);
-        // } elseif($request->password_options == 'manual') {
-        //     $user->password = Hash::make($request->password);
-        // }
+        //$user->password = $request->password;
 
         $user->save();
 

@@ -20,7 +20,7 @@
           <th>Nom</th>
           <th>Email</th>
           <th>Date de création</th>
-          <th>Actions</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -30,7 +30,7 @@
           <td>{{$user->name}}</td>
           <td>{{$user->email}}</td>
           <td>{{$user->created_at->toFormattedDateString()}}</td>
-          <td>
+          <td class="has-text-right">
             <a href="{{route('users.show', $user->id)}}" class="button is-outlined">
                 <span class="icon">
                     <i class="far fa-eye"></i>

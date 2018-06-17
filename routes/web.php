@@ -49,6 +49,8 @@ Route::prefix('intranet')->middleware('role:superadministrator|administrator|use
     Route::get('/', 'IntraController@index')->name('intranet');
     Route::get('dashboard', 'IntraController@dashboard')->name('intranet.dashboard');
     Route::resource('/users', 'UserCOntroller');
+    Route::resource('/permissions', 'PermissionController');
+    Route::resource('/judokas', 'JudokaController');
 });
 
 // Route::get('/home', 'HomeController@index')->name('home');

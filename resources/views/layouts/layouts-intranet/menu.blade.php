@@ -15,7 +15,7 @@
     <i class="fas fa-cogs m-r-5"></i>Gestion du club
   </p>
   <ul class="menu-list">
-    <li><a>Judokas</a></li>
+    <li><a href="{{route('judokas.index')}}">Judokas</a></li>
     <li><a>Fiches de frais</a></li>
   </ul>
   <p class="menu-label">
@@ -23,6 +23,6 @@
   </p>
   <ul class="menu-list">
     <li><a href="{{ route('users.index') }}">Utilisateurs</a></li>
-    <li><a>Roles & permissions</a></li>
+    <li><a href={{ route('permissions.index')}}>Roles & permissions</a></li>
   </ul>
 </aside>

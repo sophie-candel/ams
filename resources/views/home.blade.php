@@ -12,12 +12,12 @@
             <div class="column is-one-quarter has-text-centered">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
                 Nam a tortor sollicitudin, tempor odio ac, gravida eros.
-                <button class="button">Voir les horaires</button>
+                <button class="button is-fullwidth m-t-10">Voir les horaires</button>
             </div>
             <div class="column is-one-quarter has-text-centered">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
                 Nam a tortor sollicitudin, tempor odio ac, gravida eros.
-                <button class="button">Voir le programme</button>
+                <button class="button is-fullwidth m-t-10">Voir le programme</button>
             </div>
         </div>
     </div>

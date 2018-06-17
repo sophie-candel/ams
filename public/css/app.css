@@ -4823,7 +4823,7 @@ a.box:active {
 
 .button:focus,
 .button.is-focused {
-  border-color: #4a4a4a;
+  border-color: #3273dc;
   color: #363636;
 }
 
@@ -11210,7 +11210,7 @@ a.navbar-item.is-active,
 .pagination-previous:focus,
 .pagination-next:focus,
 .pagination-link:focus {
-  border-color: #4a4a4a;
+  border-color: #3273dc;
 }
 
 .pagination-previous:active,
@@ -17561,7 +17561,7 @@ aside {
   height: 100vh;
 }
 
-main {
+.main {
   margin-left: 20%;
   padding: 50px;
 }
@@ -17573,6 +17573,14 @@ hr {
 .columns {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+pre {
+  padding: 0.75rem;
+}
+
+hr {
+  height: 1px;
 }
 
 .m-t-2 {
