@@ -14,7 +14,7 @@ class JudokasSeeder extends Seeder
         DB::table('judokas')->insert([
             'nom' => 'Candel',
             'prenom' => 'Sophie',
-            'photo' => 'sophiecandel.png',
+            'photo' => 'photo.png',
             'date_naissance' => '1997-01-10',
             'dojo' => 'A',
             'grade' => '1D',
@@ -29,7 +29,7 @@ class JudokasSeeder extends Seeder
         DB::table('judokas')->insert([
             'nom' => 'Candel',
             'prenom' => 'Jacques',
-            'photo' => 'jacquescandel.png',
+            'photo' => 'photo.png',
             'date_naissance' => '1997-01-10',
             'dojo' => 'A',
             'grade' => '1D',

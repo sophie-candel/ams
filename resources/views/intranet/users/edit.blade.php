@@ -29,9 +29,9 @@
                     <div class="field">
                         <b-radio v-model="password_options" native-value="keep">Ne pas changer</b-radio>
                     </div>
-                    <div class="field">
+                    {{-- <div class="field">
                         <b-radio v-model="password_options" native-value="auto">Générer automatiquement</b-radio>
-                    </div>
+                    </div> --}}
                     <div class="field">
                         <b-radio v-model="password_options" native-value="manual">Générer manuellement</b-radio>
                         <p class="control">

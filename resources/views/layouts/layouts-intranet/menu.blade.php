@@ -1,6 +1,6 @@
 <aside class="menu">
   <p class="menu-label">
-    <i class="fas fa-home m-r-5"></i>Accueil
+    <i class="fas fa-home m-r-5"></i><a href="{{ route('intranet.dashboard')}}">Accueil</a>
   </p>
   <p class="menu-label">
     <i class="fas fa-desktop m-r-5"></i>Gestion du site

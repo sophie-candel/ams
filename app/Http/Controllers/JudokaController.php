@@ -11,7 +11,7 @@ class JudokaController extends Controller
     /** INDEX  **/
     public function index()
     {
-        $judokas = Judoka::orderBy('nom')->get();
+        $judokas = Judoka::orderBy('nom')->paginate(20);
         return view('intranet.judokas.index')->withJudokas($judokas);
     }
 
@@ -27,7 +27,7 @@ class JudokaController extends Controller
         $this->validate($request, [
             'nom' => 'required',
             'prenom' => 'required',
-            'photo' => 'filled',
+            'file' => 'filled|file|mimetypes:image/jpeg,image/png',
             'date_naissance' => 'required|date',
             'licence' => 'required',
             'dojo' => 'required',
@@ -51,7 +51,17 @@ class JudokaController extends Controller
         $judoka = new Judoka();
         $judoka->nom = $request->nom;
         $judoka->prenom = $request->prenom;
-        $judoka->photo = $request->prenom;
+
+        //$judoka->photo = $request->file->getClientOriginalName();
+
+        //$judoka->photo = $request->photo;
+        if($request->has('file')) {
+            $judoka->photo = $request->file->getClientOriginalName();
+        } 
+        // else {
+        //     $judoka->photo = 'photo.png';
+        // }
+        
         $judoka->date_naissance = $request->date_naissance;
         $judoka->licence = $request->licence;
         $judoka->dojo = $request->dojo;
@@ -64,6 +74,12 @@ class JudokaController extends Controller
         $judoka->adresse_ville = $request->adresse_ville;
         
         $judoka->save();
+
+        if($request->has('file')) {
+            $request->file->storeAs('assets/photos/judokas', $judoka->photo, 'public');
+        }
+
+        // $request->file->storeAs('assets', $judoka->photo, 'public');
 
         return redirect()->route('judokas.show', ['id'=>$judoka->id]);
     }
@@ -88,7 +104,7 @@ class JudokaController extends Controller
         $this->validate($request, [
             'nom' => 'filled',
             'prenom' => 'filled',
-            'photo' => 'filled',
+            'file' => 'filled|file|mimetypes:image/jpeg,image/png',
             'date_naissance' => 'filled|date',
             'licence' => 'filled',
             'dojo' => 'filled',
@@ -104,7 +120,6 @@ class JudokaController extends Controller
         $judoka = Judoka::findOrFail($id);
         $judoka->nom = $request->nom;
         $judoka->prenom = $request->prenom;
-        $judoka->photo = $request->prenom;
         $judoka->date_naissance = $request->date_naissance;
         $judoka->licence = $request->licence;
         $judoka->dojo = $request->dojo;
@@ -115,6 +130,15 @@ class JudokaController extends Controller
         $judoka->adresse_rue = $request->adresse_rue;
         $judoka->adresse_cp = $request->adresse_cp;
         $judoka->adresse_ville = $request->adresse_ville;
+
+        // if($request->has('file')) {
+        //     $judoka->photo = $request->file->getClientOriginalName();
+        // } 
+
+        if(isset($request->file) && !empty($request->file)){
+            $judoka->photo = $request->file->getClientOriginalName();
+            $request->file->storeAs('assets/photos/judokas', $judoka->photo, 'public');
+        }
         
         $judoka->save();
 

@@ -34,4 +34,35 @@ hr {
     height: 1px;
 }
 
-// $pagination-color = $primary;
+.table td,
+.table th {
+    vertical-align: middle;
+}
+.avatar,
+.avatar-round {
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        &:before {
+            display: block;
+            content: "";
+            width: 100%;
+            padding-top: calc((1 / 1) * 100%);
+        }
+    }
+}
+.avatar-round {
+    width: 50px;
+    height: 50px;
+    img {
+        border-radius: 50%;
+    }
+}

@@ -17,7 +17,7 @@ class CreateJudokasTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('prenom');
-            $table->string('photo');
+            $table->string('photo')->default('photo.png');
             $table->date('date_naissance');
             $table->string('dojo');
             $table->string('grade');
