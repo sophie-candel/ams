@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
 use DB;
 use Session;
 use Hash;
@@ -76,7 +77,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::where('id', $id)->with('roles')->first();
         return view("intranet.users.show")->withUser($user);
     }
 
@@ -88,8 +89,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-        return view("intranet.users.edit")->withUser($user);
+        $roles = Role::all();
+        $user = User::where('id', $id)->with('roles')->first();
+        return view("intranet.users.edit")->withUser($user)->withRoles($roles);
     }
 
     /**
@@ -112,7 +114,6 @@ class UserController extends Controller
         if($request->password_options == 'auto') {
             $password = Hash::make(str_random(8));
         } 
-        
         elseif($request->password_options == 'manual') {
             $user->password = Hash::make($request->password);
         }
@@ -123,6 +124,8 @@ class UserController extends Controller
         //$user->password = $request->password;
 
         $user->save();
+
+        $user->syncRoles(explode(',', $request->roles));
 
         return redirect()->route('users.show', ['id'=>$user->id]);
 

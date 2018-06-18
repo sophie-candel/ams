@@ -50,6 +50,7 @@ Route::prefix('intranet')->middleware('role:superadministrator|administrator|use
     Route::get('dashboard', 'IntraController@dashboard')->name('intranet.dashboard');
     Route::resource('/users', 'UserCOntroller');
     Route::resource('/permissions', 'PermissionController');
+    Route::resource('/roles', 'RoleController');
     Route::resource('/judokas', 'JudokaController');
 });
 

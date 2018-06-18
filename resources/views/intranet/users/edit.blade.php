@@ -41,6 +41,17 @@
 
             </div>
 
+            <div class="column">
+                <label for="roles" class="label">Roles:</label>
+                <input type="hidden" name="roles" :value="rolesSelected" />
+    
+                @foreach ($roles as $role)
+                <div class="field">
+                    <b-checkbox v-model="rolesSelected" :native-value="{{$role->id}}">{{$role->display_name}}</b-checkbox>
+                </div>
+                @endforeach
+            </div>
+
             <div class="field is-grouped">
                 <p class="control">
                   <a href="{{route('users.index')}}" class="button is-danger  is-fullwidth">
@@ -73,10 +84,11 @@
 @section('scripts')
 <script>
     var app = new Vue({
-        el: '#app',
-        data: {
-            password_options: 'keep'
-        }
+      el: '#app',
+      data: {
+        password_options: 'keep',
+        rolesSelected: {!! $user->roles->pluck('id') !!}
+      }
     });
 </script>
 @endsection

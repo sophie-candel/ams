@@ -11,12 +11,6 @@
 </div>
 <hr>
 
-<article class="message is-danger"  v-if="warning">
-  <div class="message-body">
-      Supprimer ce judoka ? (cette action est irréversible !)
-  </div>
-</article>
-
 <div class="card">
   <div class="card-content">
     <table class="table is-hoverable is-fullwidth">
@@ -51,7 +45,7 @@
                 <i class="fas fa-pencil-alt"></i>
               </span>
             </a>
-            <a class="button is-outlined" v-on:click="warning = !warning">
+            <a class="button is-outlined">
               <span class="icon">
                 <i class="fas fa-trash-alt"></i>
               </span>
@@ -65,15 +59,4 @@
 </div>
 
 {{$judokas->links('vendor.pagination.default')}}
-@endsection
-
-@section('scripts')
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-          warning: false
-        }
-    });
-</script>
 @endsection
