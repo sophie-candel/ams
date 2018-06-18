@@ -108,9 +108,6 @@ class UserController extends Controller
             'email' => 'filled'
         ]);
         
-      
-
-        
         if($request->password_options == 'auto') {
             $password = Hash::make(str_random(8));
         } 

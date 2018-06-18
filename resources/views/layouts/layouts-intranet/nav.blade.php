@@ -14,12 +14,23 @@
         </span>
         Retour au site
       </a>
-      <a class="navbar-item has-text-white" href="{{ route('logout') }}">
+      {{-- <a class="navbar-item has-text-white" href="{{ route('logout') }}">
         <span class="icon m-r-2">
           <i class="fas fa-sign-out-alt"></i>
         </span>
-        Déconnexion
-      </a>
+        Déconnexion ({{Auth::user()->name}})
+      </a> --}}
+
+      <a href="{{route('logout')}}" class="navbar-item has-text-white" onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+        <span class="icon">
+          <i class="fa fa-fw fa-sign-out m-r-5"></i>
+        </span>
+        Déconnexion ({{Auth::user()->name}})
+      </a>   
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+      </form>
 
     </div>
   </div>
