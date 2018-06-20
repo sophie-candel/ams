@@ -7,11 +7,14 @@
         @yield('content')
     </div>
 
-    <footer class="m-t-100 has-background-grey">
+    <footer class="m-t-100 has-background-grey parallax px-is-footer">
         <div class="container has-text-centered">
             @if (Auth::guest())
             <a href="{{ route('login') }}">Connexion</a> @else
             <a href="{{ route('intranet.dashboard') }}">Intranet</a> @endif
+            <p>Mentions légales</p>
+            {{--
+            <p>© Arts Martiaux Schweighouse 2018</p> --}}
         </div>
     </footer>
     @yield('scripts')

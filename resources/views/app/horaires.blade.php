@@ -1,9 +1,11 @@
 @extends('layouts.layouts-app.master') 
 @section('content')
-<div class="container">
-    <section class="section">
+<section class="section parallax px-is-horaires">
+    <div class="container">
         <h1 class="title">Horaires</h1>
-    </section>
-    <section class="section"></section>
+    </div>
+</section>
+
+<div class="container">
 </div>
 @endsection

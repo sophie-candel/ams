@@ -1,9 +1,13 @@
 @extends('layouts.layouts-app.master') 
 @section('content')
-<div class="container">
-    <section class="section">
+
+<section class="section parallax px-is-calendrier">
+    <div class="container">
         <h1 class="title">Calendrier</h1>
-    </section>
+    </div>
+</section>
+
+<div class="container">
     <section class="section">
         <div class="columns">
             <div class="column is-one-third">

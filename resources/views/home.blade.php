@@ -1,8 +1,10 @@
 @extends('layouts.layouts-app.master') 
 @section('content')
 
-<section class="section">
-
+<section class="section parallax px-is-home">
+    <div class="container">
+        <h1>Arts Martiaux Schweighouse</h1>
+    </div>
 </section>
 
 <section class="section">
