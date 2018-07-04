@@ -991,6 +991,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 //     data: {}
 // });
 
+__webpack_require__(50);
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -43219,6 +43221,41 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */
+/***/ (function(module, exports) {
+
+var accordions = document.getElementsByClassName("has-submenu");
+
+for (var i = 0; i < accordions.length; i++) {
+    accordions[i].onclick = function () {
+        this.classList.toggle("is-active");
+
+        var submenu = this.nextElementSibling;
+        if (submenu.style.maxHeight) {
+            // menu is open, we need to close it
+            submenu.style.maxHeight = null;
+            submenu.style.marginTop = null;
+            submenu.style.marginBottom = null;
+        } else {
+            // menu is closed, so we need to open it
+            submenu.style.maxHeight = submenu.scrollHeight + "px";
+            submenu.style.marginTop = "0.75em";
+            submenu.style.marginBottom = "0.75em";
+        }
+    };
+}
 
 /***/ })
 /******/ ]);

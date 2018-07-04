@@ -104,7 +104,8 @@ class JudokaController extends Controller
         $this->validate($request, [
             'nom' => 'filled',
             'prenom' => 'filled',
-            'file' => 'filled|file|mimetypes:image/jpeg,image/png',
+            'file' => 'filled',
+            // 'file' => 'filled|file|mimetypes:image/jpeg,image/png',
             'date_naissance' => 'filled|date',
             'licence' => 'filled',
             'dojo' => 'filled',

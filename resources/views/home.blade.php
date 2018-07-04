@@ -12,13 +12,17 @@
 
         <div class="columns">
             <div class="column is-one-quarter has-text-centered">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
-                Nam a tortor sollicitudin, tempor odio ac, gravida eros.
+                <p>Cours de judo</p>
+                <p>loisir et compétition</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
+                Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
                 <button class="button is-fullwidth m-t-10">Voir les horaires</button>
             </div>
             <div class="column is-one-quarter has-text-centered">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
-                Nam a tortor sollicitudin, tempor odio ac, gravida eros.
+                <p>Ateliers adultes</p>
+                <p>remise en forme</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
+                Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
                 <button class="button is-fullwidth m-t-10">Voir le programme</button>
             </div>
         </div>

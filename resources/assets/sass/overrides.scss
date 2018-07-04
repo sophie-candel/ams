@@ -58,7 +58,7 @@ hr {
 
         &:before {
             display: block;
-            content: '';
+            content: "";
             width: 100%;
             padding-top: calc((1 / 1) * 100%);
         }
@@ -73,7 +73,7 @@ hr {
 }
 
 .parallax {
-    background-image: url('https://i.pinimg.com/originals/57/95/80/579580e3806dc333769e143a04e2d765.jpg');
+    background-image: url("https://i.pinimg.com/originals/57/95/80/579580e3806dc333769e143a04e2d765.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -115,4 +115,22 @@ hr {
 
 .px-is-footer {
     height: auto;
+}
+
+table {
+    td,
+    th {
+        text-align: center;
+    }
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-list ul li {
+    margin-top: 0;
+    margin-bottom: 0;
 }

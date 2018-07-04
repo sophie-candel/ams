@@ -10,3 +10,5 @@ Vue.use(Buefy);
 //     el: "#app",
 //     data: {}
 // });
+
+require("./intranet");

@@ -23,8 +23,8 @@
 
       <a href="{{route('logout')}}" class="navbar-item has-text-white" onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">
-        <span class="icon">
-          <i class="fa fa-fw fa-sign-out m-r-5"></i>
+        <span class="icon m-r-2">
+          <i class="fas fa-sign-out-alt"></i>
         </span>
         Déconnexion ({{Auth::user()->name}})
       </a>   

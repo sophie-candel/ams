@@ -25,8 +25,8 @@
   <ul class="menu-list">
     <li><a href="{{ route('users.index') }}">Utilisateurs</a></li>
     <li>
-      <a href="">Roles & permissions</a>
-      <ul>
+      <a class="has-submenu">Roles & permissions</a>
+      <ul class="submenu">
         <li><a href="{{ route('roles.index')}}">Roles</a></li>
         <li><a href="{{ route('permissions.index')}}">Permissions</a></li>
       </ul>
