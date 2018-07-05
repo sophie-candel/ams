@@ -162,7 +162,7 @@ return [
 
 
         Laratrust\LaratrustServiceProvider::class,
-
+        DevMarketer\EasyNav\EasyNavServiceProvider::class,
     ],
 
     /*
@@ -212,6 +212,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Laratrust'   => Laratrust\LaratrustFacade::class,
+        'Nav' => DevMarketer\EasyNav\EasyNavFacade::class,
 
     ],
 

@@ -967,7 +967,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(39);
+module.exports = __webpack_require__(40);
 
 
 /***/ }),
@@ -991,7 +991,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 //     data: {}
 // });
 
-__webpack_require__(50);
+__webpack_require__(39);
 
 /***/ }),
 /* 11 */
@@ -43220,42 +43220,48 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* 39 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+var accordions = document.getElementsByClassName('has-submenu');
+var adminSlideButton = document.getElementById('admin-slideout-button');
 
-/***/ }),
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */
-/***/ (function(module, exports) {
+function setSubmenuStyles(submenu, maxHeight, margins) {
+    submenu.style.maxHeight = maxHeight;
+    submenu.style.marginTop = margins;
+    submenu.style.marginBottom = margins;
+}
 
-var accordions = document.getElementsByClassName("has-submenu");
+adminSlideButton.onclick = function () {
+    // console.log('clicked');
+    this.classList.toggle('is-active');
+    document.getElementById('admin-side-menu').classList.toggle('is-active');
+};
 
 for (var i = 0; i < accordions.length; i++) {
+    console.log('hello accordion', accordions[i].nextElementSibling);
+
+    if (accordions[i].classList.contains('is-active')) {
+        var submenu = accordions[i].nextElementSibling;
+        setSubmenuStyles(submenu, submenu.scrollHeight + 'px', '0.75em');
+    }
+
     accordions[i].onclick = function () {
-        this.classList.toggle("is-active");
+        this.classList.toggle('is-active');
 
         var submenu = this.nextElementSibling;
         if (submenu.style.maxHeight) {
             // menu is open, we need to close it
-            submenu.style.maxHeight = null;
-            submenu.style.marginTop = null;
-            submenu.style.marginBottom = null;
+            setSubmenuStyles(submenu, null, null);
         } else {
             // menu is closed, so we need to open it
-            submenu.style.maxHeight = submenu.scrollHeight + "px";
-            submenu.style.marginTop = "0.75em";
-            submenu.style.marginBottom = "0.75em";
+            setSubmenuStyles(submenu, submenu.scrollHeight + 'px', '0.75em');
         }
     };
 }
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

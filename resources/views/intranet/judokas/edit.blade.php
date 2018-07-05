@@ -5,7 +5,8 @@
     <div class="column">
         <h1 class="title">Modifier</h1>
     </div>
-    {{-- <div class="column has-text-right">
+    {{--
+    <div class="column has-text-right">
         <a href="{{route('judokas.show', $judoka->id)}}" class="button is-primary is-pulled-right">
             <span class="icon is-small">
                 <i class="fas fa-ban"></i>
@@ -15,24 +16,22 @@
     </div> --}}
 </div>
 
-<hr> 
-
-@if($errors->any())
-    <article class="message is-danger">
-        <div class="message-header">
-            Erreur
-        </div>
-        <div class="message-body">
-            @foreach($errors->all() as $error)
-                <p>{{$error}}</p>
-            @endforeach
-        </div>
-    </article>
+<hr> @if($errors->any())
+<article class="message is-danger">
+    <div class="message-header">
+        Erreur
+    </div>
+    <div class="message-body">
+        @foreach($errors->all() as $error)
+        <p>{{$error}}</p>
+        @endforeach
+    </div>
+</article>
 @endif
 
 
 <form action="{{route('judokas.update', $judoka->id)}}" method="POST">
-{{method_field('PUT')}} {{csrf_field()}}
+    {{method_field('PUT')}} {{csrf_field()}}
     <div class="columns">
         <div class="column">
             <div class="card">
@@ -195,26 +194,30 @@
         </div>
     </div>
 
-    <div class="field is-grouped">
-        <p class="control">
-            <a href="{{route('judokas.index')}}" class="button is-danger  is-fullwidth">
-            
-            <span class="icon is-small">
-                <i class="fas fa-ban"></i>
-            </span>
-            <span>Annuler</span>
-            </a>
-        </p>
-        <p class="control">
-            <button class="button is-success is-fullwidth">
-                
-                <span class="icon is-small">
-                    <i class="fas fa-check"></i>
-                </span>
-                <span>Enregistrer</span>
-            </button>
-        </p>
+    <div class="columns">
+        <div class="column">
+            <div class="field is-grouped">
+                <p class="control">
+                    <a href="{{route('judokas.index')}}" class="button is-danger  is-fullwidth">
+                    
+                    <span class="icon is-small">
+                        <i class="fas fa-ban"></i>
+                    </span>
+                    <span>Annuler</span>
+                    </a>
+                </p>
+                <p class="control">
+                    <button class="button is-success is-fullwidth">
+                        
+                        <span class="icon is-small">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span>Enregistrer</span>
+                    </button>
+                </p>
+            </div>
+        </div>
+        <div class="column is-one-quarter"></div>
     </div>
 </form>
-
 @endsection
