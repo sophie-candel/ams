@@ -1,8 +1,21 @@
 @extends('layouts.layouts-intranet.master') 
 @section('content')
-<h1 class="title">
-    Dashboard Bienvenue, {{Auth::user()->name}} !
-</h1>
+
+
+<div class="columns">
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-content">
+                {{--
+                <div class="avatar-round"><img src="{{asset('storage/assets/photos/users/'.{{Auth::user()->photo}}) }}"></div> --}} Bienvenue, {{Auth::user()->prenom}}
+                !
+            </div>
+        </div>
+    </div>
+    <div class="column"></div>
+</div>
+
+<hr>
 
 <div class="columns">
 

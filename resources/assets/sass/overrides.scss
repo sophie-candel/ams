@@ -169,3 +169,7 @@ hr {
         flex-grow: 1;
     }
 }
+
+.radio + .radio {
+    margin-left: 0;
+}

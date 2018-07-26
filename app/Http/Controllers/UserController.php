@@ -12,6 +12,9 @@ use Hash;
 
 class UserController extends Controller
 {
+    public function __construct() {
+        $this->middleware('role:superadministrator');
+      }
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +45,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'prenom' => 'required|max:255',
+            'nom' => 'required|max:255',
             'email' => 'required|email|unique:users'
         ]);
 
@@ -54,7 +58,8 @@ class UserController extends Controller
 
 
         $user = new User();
-        $user->name = $request->name;
+        $user->prenom = $request->prenom;
+        $user->nom = $request->nom;
         $user->email = $request->email;
         $user->password = Hash::make($password);
         $user->save();
@@ -104,7 +109,8 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'filled|max:255',
+            'prenom' => 'filled|max:255',
+            'nom' => 'filled|max:255',
             'email' => 'filled'
         ]);
         
@@ -116,7 +122,8 @@ class UserController extends Controller
         }
 
         $user = User::findOrFail($id);
-        $user->name = $request->name;
+        $user->prenom = $request->prenom;
+        $user->nom = $request->nom;
         $user->email = $request->email;
         //$user->password = $request->password;
 

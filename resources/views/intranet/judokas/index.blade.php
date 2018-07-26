@@ -46,12 +46,12 @@
               <span class="icon">
                 <i class="fas fa-pencil-alt"></i>
               </span>
-            </a>
+            </a> @role('superadministrator')
             <a class="button is-outlined is-hidden-mobile">
               <span class="icon">
                 <i class="fas fa-trash-alt"></i>
               </span>
-            </a>
+            </a> @endrole
           </td>
         </tr>
         @endforeach

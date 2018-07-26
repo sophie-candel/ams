@@ -124,6 +124,7 @@
             </div>
         </div>
 
+        <hr>
         <div class="card m-t-20">
             <header class="card-header">
                 <p class="card-header-title">Résultats en compétition</p>

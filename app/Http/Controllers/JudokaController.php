@@ -104,8 +104,8 @@ class JudokaController extends Controller
         $this->validate($request, [
             'nom' => 'filled',
             'prenom' => 'filled',
-            'file' => 'filled',
-            // 'file' => 'filled|file|mimetypes:image/jpeg,image/png',
+            // 'file' => 'filled',
+            'file' => 'filled|file|mimetypes:image/jpeg,image/png',
             'date_naissance' => 'filled|date',
             'licence' => 'filled',
             'dojo' => 'filled',
@@ -136,10 +136,15 @@ class JudokaController extends Controller
         //     $judoka->photo = $request->file->getClientOriginalName();
         // } 
 
-        if(isset($request->file) && !empty($request->file)){
+        // if(isset($request->file) && !empty($request->file)){
+        //     $judoka->photo = $request->file->getClientOriginalName();
+        //     $request->file->storeAs('assets/photos/judokas', $judoka->photo, 'public');
+        // }
+
+        if($request->has('file')) {
             $judoka->photo = $request->file->getClientOriginalName();
             $request->file->storeAs('assets/photos/judokas', $judoka->photo, 'public');
-        }
+        } 
         
         $judoka->save();
 

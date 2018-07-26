@@ -36,7 +36,7 @@
         <span class="icon m-r-2">
           <i class="fas fa-sign-out-alt"></i>
         </span>
-        Déconnexion ({{Auth::user()->name}})
+        Déconnexion ({{Auth::user()->prenom}})
       </a>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}

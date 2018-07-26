@@ -9,7 +9,8 @@
       <i class="fas fa-desktop m-r-5"></i>Gestion du site
     </p>
     <ul class="menu-list">
-      <li><a>Actualités</a></li>
+      <li><a href="{{route('actualites.index')}}" class="{{ Nav::isResource('actualites', 'intranet', $activeClass = " is-active
+          ") }}">Actualités</a></li>
       <li><a>Calendrier</a></li>
       <li><a>Résultats</a></li>
       <li><a>Galerie</a></li>

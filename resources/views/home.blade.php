@@ -14,15 +14,15 @@
             <div class="column is-one-quarter has-text-centered">
                 <p>Cours de judo</p>
                 <p>loisir et compétition</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
-                Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit
+                    amet laoreet sem. Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
                 <button class="button is-fullwidth m-t-10">Voir les horaires</button>
             </div>
             <div class="column is-one-quarter has-text-centered">
                 <p>Ateliers adultes</p>
                 <p>remise en forme</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
-                Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit
+                    amet laoreet sem. Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
                 <button class="button is-fullwidth m-t-10">Voir le programme</button>
             </div>
         </div>
@@ -31,78 +31,21 @@
 
 <section class="section has-background-primary">
     <div class="container">
-        <div class="columns">
-            <div class="column is-one-third">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="title">
-                            Title
-                        </p>
-                        <p class="subtitle">
-                            10.01.2019
-                        </p>
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
-                            Nam a tortor sollicitudin, tempor odio ac, gravida eros.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-one-third">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="title">
-                            Title
-                        </p>
-                        <p class="subtitle">
-                            10.01.2019
-                        </p>
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem.
-                            Nam a tortor sollicitudin, tempor odio ac, gravida eros. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit amet laoreet sem. Nam a tortor
-                            sollicitudin, tempor odio ac, gravida eros.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-one-third">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="title">
-                            Title
-                        </p>
-                        <p class="subtitle">
-                            10.01.2019
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-one-third">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="title">
-                            Title
-                        </p>
-                        <p class="subtitle">
-                            10.01.2019
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-one-third">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="title">
-                            Title
-                        </p>
-                        <p class="subtitle">
-                            10.01.2019
-                        </p>
-                    </div>
+        @foreach ($actualites as $actualite)
+        <div class="card m-b-20">
+            <div class="card-content">
+                <p class="title">
+                    {{$actualite->title}}
+                </p>
+                <p class="subtitle">
+                    {{$actualite->published_at}}
+                </p>
+                <div class="content">
+                    {{$actualite->content}}
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </section>
 

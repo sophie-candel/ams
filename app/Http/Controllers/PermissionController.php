@@ -8,6 +8,11 @@ use Session;
 
 class PermissionController extends Controller
 {
+  public function __construct()
+    {
+        $this->middleware('role:superadministrator');
+    }
+
     /**
      * Display a listing of the resource.
      *

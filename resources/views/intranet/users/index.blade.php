@@ -16,20 +16,28 @@
     <table class="table is-hoverable is-fullwidth">
       <thead>
         <tr>
+          <th></th>
           <th>ID</th>
+          <th>Prenom</th>
           <th>Nom</th>
           <th class="is-hidden-mobile">Email</th>
-          <th class="is-hidden-mobile">Date de création</th>
+          {{--
+          <th class="is-hidden-mobile">Date de création</th> --}}
           <th></th>
         </tr>
       </thead>
       <tbody>
         @foreach ($users as $user)
         <tr>
+          <td>
+            <div class="avatar-round"><img src="{{asset('storage/assets/photos/users/'.$user->photo) }}"></div>
+          </td>
           <th>{{$user->id}}</th>
-          <td>{{$user->name}}</td>
+          <td>{{$user->prenom}}</td>
+          <td>{{$user->nom}}</td>
           <td class="is-hidden-mobile">{{$user->email}}</td>
-          <td class="is-hidden-mobile">{{$user->created_at->toFormattedDateString()}}</td>
+          {{--
+          <td class="is-hidden-mobile">{{$user->created_at->toFormattedDateString()}}</td> --}}
           <td class="has-text-right">
             <a href="{{route('users.show', $user->id)}}" class="button is-outlined">
                 <span class="icon">
@@ -42,16 +50,7 @@
                 <i class="fas fa-pencil-alt"></i>
               </span>
               
-            </a> {{--
-            <form action="{{route('users.destroy', $user->id)}}" method="post">
-              <p>{{method_field('DELETE')}} {{ csrf_field() }}
-                <button type="submit">
-                  <span class="icon">
-                    <i class="fas fa-trash-alt"></i>
-                  </span>
-                </button>
-              </p>
-            </form> --}}
+            </a>
 
 
             <a href="{{route('users.destroy', $user->id)}}" class="button is-outlined is-hidden-mobile">

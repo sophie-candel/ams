@@ -6,9 +6,11 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', 'Controller@home')->name('home');
+
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
 Route::get('/club/presentation', function () {
     return view('app.presentation');
@@ -51,7 +53,9 @@ Route::prefix('intranet')->middleware('role:superadministrator|administrator|use
     Route::get('dashboard', 'IntraController@dashboard')->name('intranet.dashboard');
     Route::resource('/judokas', 'JudokaController');
 
-    Route::resource('/users', 'UserController')->middleware('role:superadministrator');
-    Route::resource('/permissions', 'PermissionController')->middleware('role:superadministrator');
-    Route::resource('/roles', 'RoleController')->middleware('role:superadministrator');
+    Route::resource('/actualites', 'ActualiteController');
+
+    Route::resource('/users', 'UserController');
+    Route::resource('/permissions', 'PermissionController');
+    Route::resource('/roles', 'RoleController');
 });
