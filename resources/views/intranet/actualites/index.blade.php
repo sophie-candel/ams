@@ -64,3 +64,15 @@
 
 {{$actualites->links('vendor.pagination.default')}}
 @endsection
+ 
+@section('scripts')
+<script>
+  var app = new Vue({
+      el: '#app',
+      data: {
+          moment: moment
+      }
+    });
+
+</script>
+@endsection

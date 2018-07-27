@@ -32,6 +32,10 @@ class ActualiteController extends Controller
         $actualite->content = $request->content;
         $actualite->status = $request->input('status', 0);
 
+        $date = Carbon::now();
+            $date = $date->toDateString();
+            $actualite->published_at = $date;
+
         if ($request->status === 1) {
             $date = Carbon::now();
             $date = $date->toDateString();

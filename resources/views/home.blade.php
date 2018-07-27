@@ -16,14 +16,14 @@
                 <p>loisir et compétition</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit
                     amet laoreet sem. Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
-                <button class="button is-fullwidth m-t-10">Voir les horaires</button>
+                <a class="button is-fullwidth m-t-10" href="{{route('club.disciplines')}}">En savoir plus</a>
             </div>
             <div class="column is-one-quarter has-text-centered">
                 <p>Ateliers adultes</p>
                 <p>remise en forme</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nec lacus eu ornare. Maecenas sit
                     amet laoreet sem. Nam a tortor sollicitudin, tempor odio ac, gravida eros.</p>
-                <button class="button is-fullwidth m-t-10">Voir le programme</button>
+                <a class="button is-fullwidth m-t-10" href="{{route('club.disciplines')}}">En savoir plus</a>
             </div>
         </div>
     </div>

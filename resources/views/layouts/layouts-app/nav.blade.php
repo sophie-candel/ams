@@ -10,15 +10,18 @@
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-                      Club
-                  </a>
+            Club
+          </a>
           <div class="navbar-dropdown is-right">
             <a class="navbar-item" href="{{route('club.presentation')}}">
-                          Présentation
-                      </a>
+              Présentation
+            </a>
+            <a class="navbar-item" href="{{route('club.disciplines')}}">
+              Disciplines
+            </a>
             <a class="navbar-item" href="{{route('club.equipe')}}">
-                          Equipe
-                      </a>
+              Equipe
+            </a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
